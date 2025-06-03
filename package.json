@@ -1,0 +1,19 @@
+{
+	"name": "elysia-react-turborepo",
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@tsconfig/node-lts": "^22.0.1",
+		"cspell": "^9.0.2",
+		"turbo": "^2.5.4",
+		"typescript": "latest"
+	},
+	"private": true,
+	"scripts": {
+		"build": "turbo build",
+		"dev": "turbo dev",
+		"lint": "turbo lint"
+	},
+	"trustedDependencies": ["@biomejs/biome", "@tailwindcss/oxide", "esbuild"],
+	"workspaces": ["packages/*", "app/*"],
+	"packageManager": "bun@1.2.15"
+}
