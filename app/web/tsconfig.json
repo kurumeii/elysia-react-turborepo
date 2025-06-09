@@ -1,11 +1,18 @@
 {
 	"extends": "@repo/ts-config/web.json",
-	"include": ["./src/**/*.ts", "./src/**/*.tsx"],
+	"include": [
+		"./src/**/*.ts",
+		"./src/**/*.tsx"
+	],
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"],
-			"@api": ["../api/src/index.ts"]
+			"@/*": [
+				"./src/*"
+			],
+			"@api": [
+				"../api/src/server.ts"
+			]
 		}
 	}
 }

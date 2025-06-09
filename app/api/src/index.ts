@@ -1,14 +1,13 @@
-import cors from "@elysiajs/cors"
-import Elysia from "elysia"
+import { Elysia } from "elysia"
 
-const app = new Elysia({
-	prefix: "/api/v1",
-})
-	.onStart(({ server }) => {
-		console.log(`🦊 Elysia is running at ${server?.hostname}:${server?.port}`)
-	})
-	.use(cors())
-	.get("/", () => "Hello from backend API!")
-	.listen(3001)
+export const app = new Elysia()
+	.use(import("@plugins"))
+	.group("/api", (a) =>
+		// README: Add new module here
+		a.use(import("@modules/example"))
+	)
+	.listen(Number(Bun.env.PORT), (server) =>
+		console.log(`Server is running on ${server.hostname}:${server.port}`)
+	)
 
 export type ServerType = typeof app

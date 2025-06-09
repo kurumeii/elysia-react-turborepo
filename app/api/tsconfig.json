@@ -4,6 +4,8 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
+			"@plugins": ["./src/core/plugins"],
+			"@modules/*": ["./src/modules/*"],
 			"@/*": ["./src/*"]
 		}
 	}

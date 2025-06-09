@@ -12,7 +12,7 @@ const client = treaty<ServerType>("localhost:3001")
 function TanStackQueryDemo() {
 	const { data } = useQuery({
 		queryKey: ["test"],
-		queryFn: () => client.api.v1.get(),
+		queryFn: () => client.api.example.get(),
 	})
 
 	return <div className="p-4">{data?.data}</div>
